@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Inter and Roboto Mono fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+
+/* Base styles */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+/* Component styles */
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-md hover:border-gray-300;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+  
+  .btn-success {
+    @apply bg-success-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-success-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-success-500 focus:ring-offset-2;
+  }
+  
+  .btn-warning {
+    @apply bg-warning-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-warning-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-warning-500 focus:ring-offset-2;
+  }
+  
+  .btn-danger {
+    @apply bg-danger-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-danger-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-danger-500 focus:ring-offset-2;
+  }
+  
+  .status-running {
+    @apply bg-success-50 text-success-700 border-success-200;
+  }
+  
+  .status-idle {
+    @apply bg-warning-50 text-warning-700 border-warning-200;
+  }
+  
+  .status-fault {
+    @apply bg-danger-50 text-danger-700 border-danger-200;
+  }
+  
+  .compliance-compliant {
+    @apply bg-success-50 text-success-700 border-success-200;
+  }
+  
+  .compliance-warning {
+    @apply bg-warning-50 text-warning-700 border-warning-200;
+  }
+  
+  .compliance-violation {
+    @apply bg-danger-50 text-danger-700 border-danger-200;
+  }
+  
+  .metric-value {
+    @apply font-mono text-lg font-semibold;
+  }
+  
+  .metric-label {
+    @apply text-sm text-gray-600 font-medium;
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+}
