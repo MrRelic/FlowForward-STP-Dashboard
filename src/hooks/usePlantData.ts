@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { Plant, PlantChartData, PlantFilter } from '@/types'
 import { plantDataGenerator } from '@/services/PlantDataGenerator'
 import { filterPlants } from '@/utils/helpers'
+import { VIOLATION_TYPES } from '@/utils/constants'
 
 /**
  * Custom hook for managing plant data with real-time updates
@@ -55,7 +56,7 @@ export const usePlantData = () => {
 
   // Trigger demo violation
   const triggerDemoViolation = useCallback((plantId: string, type: 'pH' | 'turbidity' | 'flow' | 'maintenance') => {
-    return plantDataGenerator.triggerDemoViolation(plantId, type)
+    return plantDataGenerator.triggerDemoViolation(plantId, type as keyof typeof VIOLATION_TYPES)
   }, [])
 
   // Resolve violation

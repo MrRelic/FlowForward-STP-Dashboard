@@ -1,17 +1,11 @@
 import { User, AuthState } from '@/types'
 import { plantDataGenerator } from './PlantDataGenerator'
 
-/**
- * AuthService - Handles user authentication and session management
- * Uses mock data for demonstration purposes
- */
 export class AuthService {
   private static readonly STORAGE_KEY = 'stp_auth_user'
   private static readonly SESSION_TIMEOUT = 8 * 60 * 60 * 1000 // 8 hours in milliseconds
 
-  /**
-   * Mock credentials for demo purposes
-   */
+  //Mock credentials for demo purposes
   private static readonly MOCK_CREDENTIALS = {
     'gov.officer': 'government123',
     'manager.a': 'manager123',
@@ -21,9 +15,7 @@ export class AuthService {
     'manager.e': 'manager123'
   }
 
-  /**
-   * Authenticate user with username and password
-   */
+  // authenticate user with username and password
   public static async login(username: string, password: string): Promise<{ success: boolean; user?: User; error?: string }> {
     try {
       // Simulate network delay
